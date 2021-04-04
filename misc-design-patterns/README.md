@@ -13,3 +13,7 @@
 10. Specification Pattern
 11. Lazy Load Pattern
 
+TODO:
+
+check
+https://github.com/kamranahmedse/design-patterns-for-humans
