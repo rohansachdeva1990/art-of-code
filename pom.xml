@@ -17,19 +17,19 @@
         <module>behavorial-design-patterns</module>
         <module>design-pattern-essentials</module>
         <module>misc-design-patterns</module>
+        <module>solid-design-principles</module>
     </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.5.2</version>
+            <version>5.7.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
