@@ -21,6 +21,9 @@
         <module>defensive-principles</module>
         <module>refactoring</module>
         <module>functional-patterns</module>
+        <module>clean-architecture</module>
+        <module>clean-coding</module>
+        <module>oop-case-studies</module>
     </modules>
 
     <properties>
