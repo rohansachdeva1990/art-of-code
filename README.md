@@ -35,3 +35,4 @@ can customize to solve a particular design problem in your code.
 ## References
 
 - [Abusing Design Patterns](http://blog.mynameismosh.com/productivity/dont-misuse-design-patterns/)
+- [Misc Collection of Patterns](https://github.com/iluwatar/java-design-patterns)
