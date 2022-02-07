@@ -19,6 +19,7 @@
 
 - _Don't overly complicate your code by just following the design patterns blindly_
 - _Simplicity is more sophisticated_
+- _Better have a few tightly coupled modules than one - large and slow._
 
 ## References
 
