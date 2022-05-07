@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>art-of-code</artifactId>
+        <artifactId>refactoring</artifactId>
         <groupId>com.rohan.aoc</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>refactoring</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>kata-one</module>
-    </modules>
+    <groupId>com.rohan.aoc.refactoring</groupId>
+    <artifactId>kata-one</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
