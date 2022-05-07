@@ -1,6 +1,8 @@
 package com.rohan.aoc.refactoring.kataone;
 
+import com.rohan.aoc.refactoring.kataone.specs.AndSpec;
 import com.rohan.aoc.refactoring.kataone.specs.BelowAreaSpec;
+import com.rohan.aoc.refactoring.kataone.specs.MaterialSpec;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,38 +16,22 @@ public class RealEstateFinder {
         this.repository = repository;
     }
 
-    public List<RealEstate> byBelowArea(float maxBuildingArea) {
-        return bySpec(new BelowAreaSpec(maxBuildingArea));
-    }
-
     public List<RealEstate> bySpec(Spec spec) {
         return repository.stream()
                 .filter(spec::isSatisfiedBy)
                 .collect(Collectors.toList());
     }
 
-    public List<RealEstate> byMaterial(EstateMaterial material) {
-        List<RealEstate> foundRealEstates = new ArrayList<>();
+    public List<RealEstate> byBelowArea(float maxBuildingArea) {
+        return bySpec(new BelowAreaSpec(maxBuildingArea));
+    }
 
-        Iterator<RealEstate> estates = repository.iterator();
-        while (estates.hasNext()) {
-            RealEstate estate = estates.next();
-            if (estate.getMaterial().equals(material))
-                foundRealEstates.add(estate);
-        }
-        return foundRealEstates;
+    public List<RealEstate> byMaterial(EstateMaterial material) {
+        return bySpec(new MaterialSpec(material));
     }
 
     public List<RealEstate> byMaterialBelowArea(EstateMaterial material, float maxBuildingArea) {
-        List<RealEstate> foundRealEstates = new ArrayList<>();
-
-        Iterator<RealEstate> estates = repository.iterator();
-        while (estates.hasNext()) {
-            RealEstate estate = estates.next();
-            if (estate.getMaterial().equals(material) && estate.getBuildingArea() < maxBuildingArea)
-                foundRealEstates.add(estate);
-        }
-        return foundRealEstates;
+        return bySpec(new AndSpec(new MaterialSpec(material), new BelowAreaSpec(maxBuildingArea)));
     }
 
     public List<RealEstate> byPlacement(EstatePlacement placement) {
@@ -102,7 +88,7 @@ public class RealEstateFinder {
         Iterator<RealEstate> estates = repository.iterator();
         while (estates.hasNext()) {
             RealEstate estate = estates.next();
-            if (estate.getType().equals(type) && estate.getPlacement().equals(placement) && estate.getMaterial().equals(material))
+            if (estate.getType().equals(type) && estate.getPlacement().equals(placement) && new MaterialSpec(material).isSatisfiedBy(estate))
                 foundRealEstates.add(estate);
         }
         return foundRealEstates;
