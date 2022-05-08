@@ -1,6 +1,7 @@
 package com.rohan.aoc.refactoring.kataone.refactored.specs;
 
 import com.rohan.aoc.refactoring.kataone.refactored.RealEstate;
+import com.rohan.aoc.refactoring.kataone.refactored.Spec;
 
 public class BelowAreaSpec implements Spec {
     private float maxBuildingArea;

@@ -2,6 +2,7 @@ package com.rohan.aoc.refactoring.kataone.refactored.specs;
 
 import com.rohan.aoc.refactoring.kataone.refactored.EstatePlacement;
 import com.rohan.aoc.refactoring.kataone.refactored.RealEstate;
+import com.rohan.aoc.refactoring.kataone.refactored.Spec;
 
 public class PlacementSpec implements Spec {
     private EstatePlacement placement;

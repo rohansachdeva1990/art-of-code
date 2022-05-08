@@ -2,8 +2,6 @@ package com.rohan.aoc.refactoring.kataone.refactored;
 
 import com.rohan.aoc.refactoring.kataone.refactored.specs.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,15 +49,12 @@ public class RealEstateFinder {
         return bySpec(new TypeSpec(type));
     }
 
-    public List<RealEstate> byVerySpecificCriteria(EstateType type, EstatePlacement placement, EstateMaterial material) {
-        List<RealEstate> foundRealEstates = new ArrayList<>();
-
-        Iterator<RealEstate> estates = repository.iterator();
-        while (estates.hasNext()) {
-            RealEstate estate = estates.next();
-            if (new TypeSpec(type).isSatisfiedBy(estate) && new PlacementSpec(placement).isSatisfiedBy(estate) && new MaterialSpec(material).isSatisfiedBy(estate))
-                foundRealEstates.add(estate);
-        }
-        return foundRealEstates;
+    public List<RealEstate> byTypePlacementMaterial(EstateType type, EstatePlacement placement, EstateMaterial material) {
+        return bySpec(new AndSpec(
+                        new TypeSpec(type),
+                        new PlacementSpec(placement),
+                        new MaterialSpec(material)
+                )
+        );
     }
 }
