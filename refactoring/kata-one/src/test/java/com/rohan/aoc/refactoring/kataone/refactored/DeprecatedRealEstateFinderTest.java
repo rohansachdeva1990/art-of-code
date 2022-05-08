@@ -9,7 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class RealEstateFinderTest {
+public class DeprecatedRealEstateFinderTest {
     private static final RealEstate WOODEN_VILLAGE_BUNGALLOW =
             new RealEstate(1, 140, EstatePlacement.VILLAGE,
                     EstateType.BUNGALOW, EstateMaterial.WOOD);
@@ -33,7 +33,7 @@ public class RealEstateFinderTest {
                     EstateType.FLAT, EstateMaterial.BRICK);
 
     private static final List<RealEstate> PRODUCT_REPOSITORY = createProductRepository();
-    private final static RealEstateFinder FINDER = new RealEstateFinder(PRODUCT_REPOSITORY);
+    private final static DeprecatedRealEstateFinder FINDER = new DeprecatedRealEstateFinder(PRODUCT_REPOSITORY);
 
     private static List<RealEstate> createProductRepository() {
         return Arrays.asList(WOODEN_VILLAGE_BUNGALLOW,
