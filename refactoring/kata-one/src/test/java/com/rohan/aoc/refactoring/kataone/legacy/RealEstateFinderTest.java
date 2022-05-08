@@ -1,6 +1,4 @@
-
-
-package com.rohan.aoc.refactoring.kataone;
+package com.rohan.aoc.refactoring.kataone.legacy;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -16,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class RealEstateFinderTest {
     private static final RealEstate WOODEN_VILLAGE_BUNGALLOW =
             new RealEstate(1, 140, EstatePlacement.VILLAGE,
-                    EstateType.BUNGALOW, EstateMaterial.WOOD);
+                    EstateType.BUNGALLOW, EstateMaterial.WOOD);
     private static final RealEstate WOODEN_VILLAGE_HOUSE =
             new RealEstate(2, 210, EstatePlacement.VILLAGE,
                     EstateType.HOUSE, EstateMaterial.WOOD);
@@ -25,7 +23,7 @@ public class RealEstateFinderTest {
                     EstateType.HOUSE, EstateMaterial.BRICK);
     private static final RealEstate BRICK_VILLAGE_BUNGALLOW =
             new RealEstate(4, 130, EstatePlacement.VILLAGE,
-                    EstateType.BUNGALOW, EstateMaterial.BRICK);
+                    EstateType.BUNGALLOW, EstateMaterial.BRICK);
     private static final RealEstate STONE_TOWN_CASTLE =
             new RealEstate(5, 3900, EstatePlacement.TOWN,
                     EstateType.CASTLE, EstateMaterial.STONE);

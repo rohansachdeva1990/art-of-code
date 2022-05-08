@@ -1,7 +1,7 @@
-package com.rohan.aoc.refactoring.kataone.specs;
+package com.rohan.aoc.refactoring.kataone.refactored.specs;
 
-import com.rohan.aoc.refactoring.kataone.EstateMaterial;
-import com.rohan.aoc.refactoring.kataone.RealEstate;
+import com.rohan.aoc.refactoring.kataone.refactored.EstateMaterial;
+import com.rohan.aoc.refactoring.kataone.refactored.RealEstate;
 
 /**
  * Follows SRP

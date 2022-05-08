@@ -1,6 +1,7 @@
-package com.rohan.aoc.refactoring.kataone;
+package com.rohan.aoc.refactoring.kataone.refactored.specs;
 
-import com.rohan.aoc.refactoring.kataone.specs.Spec;
+import com.rohan.aoc.refactoring.kataone.refactored.EstateType;
+import com.rohan.aoc.refactoring.kataone.refactored.RealEstate;
 
 public class TypeSpec implements Spec {
     private EstateType type;
