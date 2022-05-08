@@ -7,8 +7,15 @@ import com.rohan.aoc.refactoring.kataone.refactored.Spec;
 public class PlacementSpec implements Spec {
     private EstatePlacement placement;
 
-    public PlacementSpec(EstatePlacement placement) {
+    private PlacementSpec(EstatePlacement placement) {
         this.placement = placement;
+    }
+
+    /**
+     * Here we are following static factory method design pattern
+     */
+    public static PlacementSpec placedIn(EstatePlacement placement) {
+        return new PlacementSpec(placement);
     }
 
     @Override

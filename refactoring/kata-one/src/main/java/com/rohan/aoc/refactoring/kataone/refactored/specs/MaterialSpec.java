@@ -10,8 +10,12 @@ import com.rohan.aoc.refactoring.kataone.refactored.Spec;
 public class MaterialSpec implements Spec {
     private EstateMaterial material;
 
-    public MaterialSpec(EstateMaterial material) {
+    private MaterialSpec(EstateMaterial material) {
         this.material = material;
+    }
+
+    public static MaterialSpec ofMaterial(EstateMaterial material) {
+        return new MaterialSpec(material);
     }
 
     @Override
