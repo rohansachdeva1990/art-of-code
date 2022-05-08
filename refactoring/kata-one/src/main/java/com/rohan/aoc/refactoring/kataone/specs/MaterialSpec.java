@@ -2,8 +2,10 @@ package com.rohan.aoc.refactoring.kataone.specs;
 
 import com.rohan.aoc.refactoring.kataone.EstateMaterial;
 import com.rohan.aoc.refactoring.kataone.RealEstate;
-import com.rohan.aoc.refactoring.kataone.Spec;
 
+/**
+ * Follows SRP
+ */
 public class MaterialSpec implements Spec {
     private EstateMaterial material;
 
