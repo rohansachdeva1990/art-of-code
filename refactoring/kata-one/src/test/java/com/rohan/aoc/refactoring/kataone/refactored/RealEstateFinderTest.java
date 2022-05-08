@@ -1,11 +1,13 @@
 package com.rohan.aoc.refactoring.kataone.refactored;
 
+import com.rohan.aoc.refactoring.kataone.refactored.specs.AndSpecBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static com.rohan.aoc.refactoring.kataone.refactored.specs.Specs.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -48,7 +50,7 @@ public class RealEstateFinderTest {
     @Test
     public void findSmallRealEstates() {
         //when
-        List<RealEstate> foundResults = FINDER.byBelowArea(70);
+        List<RealEstate> foundResults = FINDER.bySpec(belowArea((float) 70));
 
         //then
         assertThat(foundResults)
@@ -60,7 +62,7 @@ public class RealEstateFinderTest {
     @Test
     public void findWoodenRealEstates() {
         //when
-        List<RealEstate> foundResults = FINDER.byMaterial(EstateMaterial.WOOD);
+        List<RealEstate> foundResults = FINDER.bySpec(ofMaterial(EstateMaterial.WOOD));
 
         //then
         assertThat(foundResults)
@@ -72,7 +74,10 @@ public class RealEstateFinderTest {
     @Test
     public void findWoodenSmallProperty() {
         //when
-        List<RealEstate> foundResults = FINDER.byMaterialBelowArea(EstateMaterial.WOOD, 150);
+        List<RealEstate> foundResults = FINDER.bySpec(new AndSpecBuilder()
+                .withSpec(ofMaterial(EstateMaterial.WOOD))
+                .withSpec(belowArea((float) 150))
+                .build());
 
         //then
         assertThat(foundResults)
@@ -82,7 +87,7 @@ public class RealEstateFinderTest {
     @Test
     public void findRealEstatesInTown() {
         //when
-        List<RealEstate> foundResults = FINDER.byPlacement(EstatePlacement.TOWN);
+        List<RealEstate> foundResults = FINDER.bySpec(placedIn(EstatePlacement.TOWN));
 
         //then
         assertThat(foundResults)
@@ -94,7 +99,7 @@ public class RealEstateFinderTest {
     @Test
     public void findNonVillageRealEstates() {
         //when
-        List<RealEstate> foundResults = FINDER.byAvoidingPlacement(EstatePlacement.VILLAGE);
+        List<RealEstate> foundResults = FINDER.bySpec(not(placedIn(EstatePlacement.VILLAGE)));
 
         //then
         assertThat(foundResults)
@@ -108,7 +113,7 @@ public class RealEstateFinderTest {
     @Test
     public void findByAreaRange() {
         //when
-        List<RealEstate> foundResults = FINDER.byAreaRange(130, 140);
+        List<RealEstate> foundResults = FINDER.bySpec(ofAreaRange((float) 130, (float) 140));
 
         //then
         assertThat(foundResults)
@@ -120,7 +125,7 @@ public class RealEstateFinderTest {
     @Test
     public void findAllHouses() {
         //when
-        List<RealEstate> foundResults = FINDER.byType(EstateType.HOUSE);
+        List<RealEstate> foundResults = FINDER.bySpec(ofType(EstateType.HOUSE));
 
         //then
         assertThat(foundResults)
@@ -132,7 +137,11 @@ public class RealEstateFinderTest {
     @Test
     public void findStoneCastlesInTowns() {
         //when
-        List<RealEstate> foundResults = FINDER.byTypePlacementMaterial(EstateType.CASTLE, EstatePlacement.TOWN, EstateMaterial.STONE);
+        List<RealEstate> foundResults = FINDER.bySpec(new AndSpecBuilder()
+                .withSpec(ofType(EstateType.CASTLE))
+                .withSpec(placedIn(EstatePlacement.TOWN))
+                .withSpec(ofMaterial(EstateMaterial.STONE))
+                .build());
 
         //then
         assertThat(foundResults)
