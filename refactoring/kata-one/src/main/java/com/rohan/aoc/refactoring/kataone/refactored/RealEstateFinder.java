@@ -3,6 +3,7 @@ package com.rohan.aoc.refactoring.kataone.refactored;
 import com.rohan.aoc.refactoring.kataone.refactored.specs.AndSpecBuilder;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static com.rohan.aoc.refactoring.kataone.refactored.specs.Specs.*;
@@ -17,9 +18,9 @@ public class RealEstateFinder {
     /**
      * Follows OCP
      */
-    public List<RealEstate> bySpec(Spec spec) {
+    public List<RealEstate> bySpec(Predicate<RealEstate> spec) {
         return repository.stream()
-                .filter(spec::isSatisfiedBy)
+                .filter(spec)
                 .collect(Collectors.toList());
     }
 
