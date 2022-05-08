@@ -3,17 +3,13 @@ package com.rohan.aoc.refactoring.kataone.refactored.specs;
 import com.rohan.aoc.refactoring.kataone.refactored.RealEstate;
 import com.rohan.aoc.refactoring.kataone.refactored.Spec;
 
-public class AreaRangeSpec implements Spec {
+class AreaRangeSpec implements Spec {
     private final float minArea;
     private final float maxArea;
 
-    private AreaRangeSpec(float minArea, float maxArea) {
+    AreaRangeSpec(float minArea, float maxArea) {
         this.minArea = minArea;
         this.maxArea = maxArea;
-    }
-
-    public static AreaRangeSpec ofAreaRange(float minArea, float maxArea) {
-        return new AreaRangeSpec(minArea, maxArea);
     }
 
     public boolean isSatisfiedBy(RealEstate estate) {

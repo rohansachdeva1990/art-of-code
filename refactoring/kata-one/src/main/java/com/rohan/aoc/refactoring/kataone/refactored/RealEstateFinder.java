@@ -5,12 +5,7 @@ import com.rohan.aoc.refactoring.kataone.refactored.specs.AndSpec;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.rohan.aoc.refactoring.kataone.refactored.specs.AreaRangeSpec.ofAreaRange;
-import static com.rohan.aoc.refactoring.kataone.refactored.specs.BelowAreaSpec.belowArea;
-import static com.rohan.aoc.refactoring.kataone.refactored.specs.MaterialSpec.ofMaterial;
-import static com.rohan.aoc.refactoring.kataone.refactored.specs.NotSpec.not;
-import static com.rohan.aoc.refactoring.kataone.refactored.specs.PlacementSpec.placedIn;
-import static com.rohan.aoc.refactoring.kataone.refactored.specs.TypeSpec.ofType;
+import static com.rohan.aoc.refactoring.kataone.refactored.specs.Specs.*;
 
 public class RealEstateFinder {
     private List<RealEstate> repository;
