@@ -1,6 +1,6 @@
 package com.rohan.aoc.refactoring.kataone.refactored;
 
-import com.rohan.aoc.refactoring.kataone.refactored.specs.AndSpec;
+import com.rohan.aoc.refactoring.kataone.refactored.specs.AndSpecBuilder;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,7 +35,10 @@ public class RealEstateFinder {
 
     @Deprecated
     public List<RealEstate> byMaterialBelowArea(EstateMaterial material, float maxBuildingArea) {
-        return bySpec(new AndSpec(ofMaterial(material), belowArea(maxBuildingArea)));
+        return bySpec(new AndSpecBuilder()
+                .withSpec(ofMaterial(material))
+                .withSpec(belowArea(maxBuildingArea))
+                .build());
     }
 
     @Deprecated
@@ -60,6 +63,10 @@ public class RealEstateFinder {
 
     @Deprecated
     public List<RealEstate> byTypePlacementMaterial(EstateType type, EstatePlacement placement, EstateMaterial material) {
-        return bySpec(new AndSpec(ofType(type), placedIn(placement), ofMaterial(material)));
+        return bySpec(new AndSpecBuilder()
+                .withSpec(ofType(type))
+                .withSpec(placedIn(placement))
+                .withSpec(ofMaterial(material))
+                .build());
     }
 }

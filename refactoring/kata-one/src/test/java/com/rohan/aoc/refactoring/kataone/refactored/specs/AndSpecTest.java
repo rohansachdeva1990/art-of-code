@@ -27,7 +27,8 @@ class AndSpecTest {
     @Test
     void shouldVerifyTwoComponentsInCaseOfYesResults() {
         // Given
-        AndSpec andSpec = new AndSpec(yesSpec, yesSpec);
+        AndSpec andSpec = new AndSpecBuilder().withSpec(yesSpec)
+                .withSpec(yesSpec).build();
 
         // When
         boolean andResult = andSpec.isSatisfiedBy(mock(RealEstate.class));
@@ -41,7 +42,9 @@ class AndSpecTest {
     @Test
     void shouldVerifyThreeComponentsInCaseOfYesResults() {
         // Given
-        AndSpec andSpec = new AndSpec(yesSpec, yesSpec, yesSpec);
+        AndSpec andSpec = new AndSpecBuilder().withSpec(yesSpec)
+                .withSpec(yesSpec)
+                .withSpec(yesSpec).build();
 
         // When
         boolean andResult = andSpec.isSatisfiedBy(mock(RealEstate.class));
