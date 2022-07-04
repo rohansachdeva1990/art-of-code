@@ -28,3 +28,4 @@
 - [About Refactoring](https://refactoring.pl/)
 - [Code Smells](https://maximilianocontieri.com/series/code-smells)
 - [Object Design Checklist](https://maximilianocontieri.com/object-design-checklist)
+- [Architecture & Design](https://www.developer.com/design/)
