@@ -20,8 +20,10 @@ Flow -> Methods -> Classes -> Patterns -> Arch
     - https://refactoring.pl/en/how-to-refactor-tests-towards-fluent-assertion-pattern/
     - https://refactoring.pl/en/how-to-change-procedural-code-into-object-oriented-one/
     - https://www.youtube.com/watch?v=cZnSBr2SEf0
+- How tos :
+    - [Refactor Switch Statements](https://www.developer.com/design/seven-ways-to-refactor-java-switch-statements/)
 
-### Shortcuts
+### Intellij Shortcuts (MAC)
 
 | What                 | Shortcut        |
 |----------------------|-----------------|
@@ -33,4 +35,4 @@ Flow -> Methods -> Classes -> Patterns -> Arch
 | Extract Field        | OPT + CMD + F   |
 | Usages               | CMD + B         |
 | Introduce Constant   | OPT + CMD + C   |
-| 	                    | 	               |
+
